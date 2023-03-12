@@ -24,12 +24,14 @@ function render(book) {
         const bookCard = document.createElement("div");
         bookCard.classList.add("bookCard");
         bookCard.setAttribute("data-id", id);
-
+        if (book.isRead) bookCard.classList.add("read");
+        else bookCard.classList.add("notRead");
         bookCard.innerHTML = `
             <h2>${book.title}</h2>
             <h3>${book.author}</h3>
             <p>${book.pages} pages</p>
             <p>${book.isRead ? "Read" : "Not read"}</p>
+            <button class="readButton">Read?</button>
             <button class="deleteButton">Delete</button>
         `;
         library.appendChild(bookCard);
@@ -79,6 +81,12 @@ library.addEventListener("click", (event) => {
         let id = event.target.parentElement.dataset.id;
         console.log(id);
         myLibrary.splice(id, 1);
+        render();
+    }
+    if (event.target.classList.contains("readButton")) {
+        let id = event.target.parentElement.dataset.id;
+        myLibrary[id].isRead = !myLibrary[id].isRead;
+        event.target.textContent = myLibrary[id].isRead ? "Read" : "Not read";
         render();
     }
 });
