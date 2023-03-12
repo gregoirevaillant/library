@@ -1,6 +1,11 @@
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
-const theLordOfTheRings = new Book("The PORSH", "J.R.R. Tolkien", 295, true);
-const theSilmarillion = new Book("The TUCH", "J.R.R. Tolkien", 295, true);
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 195, true);
+const theLordOfTheRings = new Book(
+    "The Hobbit 2",
+    "J.R.R. Tolkien",
+    295,
+    false
+);
+const theSilmarillion = new Book("The Hobbit 3", "J.R.R. Tolkien", 395, false);
 
 let myLibrary = [theHobbit, theLordOfTheRings, theSilmarillion];
 
