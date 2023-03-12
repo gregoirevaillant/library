@@ -8,6 +8,34 @@
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
+        <header>
+            <h1>Library</h1>
+        </header>
+        <main>
+            <div class="buttonDiv">
+                <button type="button" id="newBookButton">Add new book</button>
+            </div>
+            <div id="newBookFormWrapper" class="hidden">
+                <form id="newBookForm">
+                    <h2>Add new book</h2>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required/>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required/>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="pages" required/>
+                    <label for="read">Read</label>
+                    <select size="2" id="isRead" name="read" required/>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                    <p id="error" class="hidden">Please complete all fields!</p>
+                    <button type="submit" id="requestNewBook">Submit</button>
+                </form>
+            </div>
+            <div id="library"></div>
+
+        </main>
         <script src="./main.js"></script>
     </body>
 </html>
